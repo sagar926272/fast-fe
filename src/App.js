@@ -22,6 +22,9 @@ function App() {
       // if (!parsedInput.data) throw new Error("Invalid JSON format");
 
       const res = await axios.post(BACKEND_URL, jsonInput);
+      axios.AxiosHeaders = {
+        "Content-Type": "application/json",
+      };
       setResponse(res.data);
       setError("");
     } catch (err) {
